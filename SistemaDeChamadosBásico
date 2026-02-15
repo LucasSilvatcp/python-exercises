@@ -1,0 +1,46 @@
+chamados = []
+
+while True:  # 'T' maiúsculo
+    print("\n=== SISTEMA DE CHAMADOS ===")
+    print("1 - Abrir chamado")
+    print("2 - Listar chamados")
+    print("3 - Atualizar status")
+    print("4 - Sair")
+    
+    opcao = input("Escolha: ")
+    
+    # Tudo abaixo agora está indentado para dentro do while
+    if opcao == "1":
+        nome = input("Nome do usuário: ")
+        problema = input("Descreva o problema: ")
+        chamado = {
+            "nome": nome,
+            "problema": problema,
+            "status": "Aberto"
+        }
+        chamados.append(chamado)
+        print("Chamado aberto com sucesso!")
+    
+    elif opcao == "2":
+        if not chamados: 
+            print("Nenhum chamado aberto.")
+        else:
+            for i, c in enumerate(chamados):
+                # Corrigido printf para print e as chaves do dicionário
+                print(f"{i} - {c['nome']} | {c['problema']} | {c['status']}")
+                
+    elif opcao == "3":
+        indice = int(input("Número do chamado: "))
+        if 0 <= indice < len(chamados):
+            chamados[indice]["status"] = "Resolvido"
+            print("Status atualizado!")
+        else:
+            print("Chamado inválido.")
+            
+    elif opcao == "4":
+        print("Saindo...")
+        break  # Agora o break está dentro do loop, então funciona!
+        
+    else:
+        print("Opção inválida")
+
