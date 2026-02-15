@@ -1,0 +1,26 @@
+# Pergunta o nome do usuário e armazena na variável "nome"
+nome = input("Olá! Qual é o seu nome? ")
+
+# Exibe uma mensagem personalizada usando o nome informado
+print(f"Prazer em te conhecer, {nome}!")
+
+# Pergunta a idade do usuário (como texto)
+idade_texto = input("Quantos anos você tem? ")
+
+# Converte a idade de texto (string) para número inteiro (int)
+idade = int(idade_texto)
+
+# Define a idade fixa do "bot"
+idade_bot = 3
+
+# Calcula a diferença entre a idade do usuário e a idade do bot
+diferenca_idade = idade - idade_bot
+
+# Pergunta a cor favorita do usuário
+cor = input("Qual é a sua cor favorita? ")
+
+# Mostra a diferença de idade entre o usuário e o bot
+print(f"Você é {diferenca_idade} anos mais velho que eu. Eu tenho apenas {idade_bot} anos!")
+
+# Exibe uma mensagem comentando sobre a cor favorita do usuário
+print(f"Ah, {cor} é uma cor muito bonita!")
